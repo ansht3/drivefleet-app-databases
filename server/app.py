@@ -98,12 +98,13 @@ def create_app(test_config=None):
     else:
         app.config["SQLALCHEMY_DATABASE_URI"] = my_resolving_database_uri()
 
-    # default isolation for the db to ensure that the data remains consdistent accordingly
-    app.config.setdefault(
-        "SQLALCHEMY_ENGINE_OPTIONS",
-        {"isolation_level": "READ COMMITTED"},
-    )
-
+    # checking if the sql alchemy has the options inc ommited and setting it to serliazable for sqlite
+    if "SQLALCHEMY_ENGINE_OPTIONS" not in app.config:
+        uri = app.config.get("SQLALCHEMY_DATABASE_URI", "")
+        if uri.startswith("sqlite"):
+            app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {"isolation_level": "SERIALIZABLE"}
+        else:
+            app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {"isolation_level": "READ COMMITTED"}
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "wemby-mvp")
 
