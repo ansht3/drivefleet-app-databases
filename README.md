@@ -25,3 +25,5 @@ npm run dev
 ```
 
 Then open **http://127.0.0.1:5173** in your browser. Optional demo data (from `server` with the venv active): `python seed.py`.
+
+Google Cloud deployment: https://drivefleet-app-databases-557187672297.us-central1.run.app
