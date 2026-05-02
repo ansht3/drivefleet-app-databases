@@ -1,0 +1,11 @@
+AI Disclosure
+_____________
+I used AI tools like ChatGPT mainly to help generate starter boilerplate and speed up some of the wiring like with the frontend I created with React. For example, AI was helpful for producing initial templates for components, understanding unfamiliar code patterns, and helping me debug implementation issues faster. So specifically for the frontend, I was able to use AI on the ReportsForm.jsx, as I wanted to learn a lot more about JavaScript and React. So thus I was able to learn how to use useEffect in order to have three axios get calls to the customer vehicle and location apis, which ensured that every option the user sees in a dropdown comes from a live database query and is not static. 
+
+However, the actual project idea, schema design, endpoints, report logic, indexing rationale, SQL injection protection, and much of the backend portion of the application where based on what I did.
+
+I went through all the AI outputs I used, checked whether my code was able to match accordingly with the database schema that I matched. As I result, I needed to go through this human in the loop evaluation to ensure that I was updating the pieces that did not fit, like for inserting new vehicle or sorting based on the date range.
+
+I would first decide the features, such as booking a rental, updating only the return date, calculating total cost on the backend, or generating a location/date report. Then I would use AI to help reason through sample ways that it can do it, then I would go ahead and use that to create the components properly, understanding what each function library or framework used for.
+
+AI was useful for helping me understand unfamiliar code, reason through implementation approaches, and move faster when debugging or adding new features. However, I also learned that using AI well requires a lot of active judgment. Throughout the development of the project, I learned AI can actually work and assist you in a way that is better for my own understanding. This is because I would first think through what the workflow needed to be, then use AI to help with implementation details, edge cases, or alternative approaches.

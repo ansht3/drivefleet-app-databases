@@ -98,6 +98,12 @@ def create_app(test_config=None):
     else:
         app.config["SQLALCHEMY_DATABASE_URI"] = my_resolving_database_uri()
 
+    # default isolation for the db to ensure that the data remains consdistent accordingly
+    app.config.setdefault(
+        "SQLALCHEMY_ENGINE_OPTIONS",
+        {"isolation_level": "READ COMMITTED"},
+    )
+
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "wemby-mvp")
 
